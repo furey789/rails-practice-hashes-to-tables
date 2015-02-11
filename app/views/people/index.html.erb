@@ -3,10 +3,31 @@
 </div>
 
 <table class="table table-bordered">
-  <thead>
 
+  <thead>
+    <tr>
+      <% @people[0].each_key do |person_attribute| %>
+        <th>
+        <%= person_attribute %>
+        </th>
+      <% end %>
+    </tr>
   </thead>
+
   <tbody>
 
+    <% @people.each do |person_hash| %>
+      <tr>
+
+      <% person_hash.each_value do |person_info| %>
+        <td>
+          <%= person_info  %>
+        </td>
+      <% end %>
+
+      </tr>
+    <% end %>
+
   </tbody>
+
 </table>
